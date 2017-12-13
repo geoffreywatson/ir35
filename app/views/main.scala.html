@@ -1,0 +1,30 @@
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @* Here's where we render the page title `String`. *@
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("lib/bootstrap/css/bootstrap.min.css")">
+        <script src="@routes.Assets.versioned("lib/bootstrap/js/bootstrap.min.js")" crossorigin="anonymous"></script>
+
+
+
+    </head>
+    <body>
+        <div class="jumbotron text-center">
+            <h1>IR35 Tax Calculator</h1>
+            <p>Enter your total earnings and get the amounts of tax payable to HMRC</p>
+        </div>
+
+        @content
+
+
+    </body>
+</html>

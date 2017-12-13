@@ -1,0 +1,22 @@
+@(userForm:Form[(BigDecimal,BigDecimal)])(implicit flash: Flash, messages: Messages)
+@import helper._
+    @import play.api.i18n._
+
+@main("Welcome to Play") {
+  <div class="container">
+
+    <h3>Gross Earnings and Deductions</h3>
+
+      @form(action=routes.HomeController.post(), 'class -> "form-horizontal"){
+          @inputText(userForm("income"), args= '_label->"Income", '_showConstraints->false)
+          @inputText(userForm("deductions"), args= '_label->"Deductions", '_showConstraints->false)
+      }
+      <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+              <button type="button" class="btn btn-default">@messages("Submit")</button>
+          </div>
+      </div>
+
+  </div>
+
+}
